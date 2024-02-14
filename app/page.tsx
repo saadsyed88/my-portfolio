@@ -1,3 +1,4 @@
+import About from '@/components/ui/HomeScreen/About';
 import Hero from '@/components/ui/HomeScreen/Hero';
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <main>
       {' '}
       <Hero />
+      <About />
     </main>
   );
 }
