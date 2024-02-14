@@ -110,7 +110,7 @@ const About = () => {
   };
 
   return (
-    <section>
+    <section className='mb-12 xl:mb-48'>
       <div className='  container mx-auto'>
         <h2 className='section-title mb-8 xl:mb-16 text-center mx-auto '>
           About Me
