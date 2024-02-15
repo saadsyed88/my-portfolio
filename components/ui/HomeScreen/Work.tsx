@@ -12,6 +12,7 @@ import { Pagination } from 'swiper/modules';
 
 const projectData = [
   {
+    id: '1',
     image: '/work/3.png',
     category: 'react js',
     name: 'Nexa Website',
@@ -21,6 +22,7 @@ const projectData = [
     github: '/',
   },
   {
+    id: '2',
     image: '/work/4.png',
     category: 'react js',
     name: 'Solstice Website',
@@ -30,6 +32,7 @@ const projectData = [
     github: '/',
   },
   {
+    id: '3',
     image: '/work/2.png',
     category: 'next js',
     name: 'Lemina Website',
@@ -39,6 +42,7 @@ const projectData = [
     github: '/',
   },
   {
+    id: '4',
     image: '/work/1.png',
     category: 'next js',
     name: 'Evolve Website',
@@ -48,6 +52,7 @@ const projectData = [
     github: '/',
   },
   {
+    id: '5',
     image: '/work/3.png',
     category: 'next js',
     name: 'Ignite Website',
@@ -57,6 +62,7 @@ const projectData = [
     github: '/',
   },
   {
+    id: '6',
     image: '/work/4.png',
     category: 'next js',
     name: 'Evolution Website',
@@ -66,6 +72,7 @@ const projectData = [
     github: '/',
   },
   {
+    id: '7',
     image: '/work/1.png',
     category: 'fullstack',
     name: 'Serenity Website',
@@ -75,6 +82,7 @@ const projectData = [
     github: '/',
   },
   {
+    id: '8',
     image: '/work/2.png',
     category: 'fullstack',
     name: 'Zenlab Website',

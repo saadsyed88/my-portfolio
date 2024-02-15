@@ -6,7 +6,8 @@ import React from 'react';
 import { Badge } from '../badge';
 import { Card, CardHeader } from '../card';
 
-interface Project {
+export interface IProject {
+  id: string;
   image: string;
   category: string;
   name: string;
@@ -16,7 +17,7 @@ interface Project {
 }
 
 interface ProjectCardProps {
-  project: Project;
+  project: IProject;
 }
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (

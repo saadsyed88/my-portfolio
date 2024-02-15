@@ -3,12 +3,13 @@ import Image from 'next/image';
 interface IDevImgProps {
   containerStyles?: string;
   imgSrc: string;
+  imageStyle?: string;
 }
 
-const DevImg = ({ containerStyles, imgSrc }: IDevImgProps) => {
+const DevImg = ({ containerStyles, imgSrc, imageStyle }: IDevImgProps) => {
   return (
     <div className={`${containerStyles}`}>
-      <Image src={imgSrc} fill priority alt='' />
+      <Image className={`${imageStyle}`} src={imgSrc} fill priority alt='' />
     </div>
   );
 };
