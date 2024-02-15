@@ -68,8 +68,8 @@ const Hero = () => {
             />
             <div className='bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'></div>
             <DevImg
-              imageStyle='rounded-b-full !h-[97%] !w-[93%]'
-              imgSrc='/hero/dev2.png'
+              imageStyle='rounded-b-full !h-[97%] !w-[90%]'
+              imgSrc='/hero/dev5.png'
               containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat  relative bg-bottom'
             />
           </div>
