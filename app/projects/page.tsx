@@ -23,15 +23,18 @@ const Projects = () => {
   useEffect(() => {
     getProject();
   }, []);
+
+  const [categories, setCategories] = useState<any>([]);
+  const [category, setCategory] = useState('All Projects');
   // remove category duplicates
 
-  const uniqueCategories = [
-    'All Projects',
-    ...new Set(projects?.map((item) => item.category)),
-  ];
-  console.log('🚀 ~ uniqueCategories:', uniqueCategories);
-  const [categories, setCategories] = useState(uniqueCategories);
-  const [category, setCategory] = useState('All Projects');
+  useEffect(() => {
+    const uniqueCategories = [
+      'All Projects',
+      ...new Set(projects?.map((item) => item.category)),
+    ];
+    setCategories(uniqueCategories);
+  }, [projects]);
 
   const filteredProjects = projects?.filter((project) => {
     return category === 'All Projects'
