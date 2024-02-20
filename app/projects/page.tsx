@@ -3,7 +3,6 @@ import Socials from '@/components/ui/HomeScreen/Socials';
 import Loader from '@/components/ui/shared/Loader';
 import ProjectCard, { IProject } from '@/components/ui/shared/ProjectCard';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { Project } from '@/types';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 
