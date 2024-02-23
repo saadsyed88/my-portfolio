@@ -15,6 +15,7 @@ const Projects = () => {
 
     const response = await fetch(`api/projects`);
     const project = await response.json();
+    console.log('🚀 ~ getProject ~ project:', project);
     setProjects(project);
     setLoading(false);
   };
@@ -34,6 +35,7 @@ const Projects = () => {
     ];
     setCategories(uniqueCategories);
   }, [projects]);
+  useEffect(() => {}, [loading, projects]);
 
   const filteredProjects = projects?.filter((project) => {
     return category === 'All Projects'
@@ -41,23 +43,23 @@ const Projects = () => {
       : project.category === category;
   });
   return (
-    <section className='min-h-screen pt-12'>
-      <div className='container mx-auto'>
-        <h2 className='section-title mb-8 xl:mb-16 text-center mx-auto'>
+    <section className="min-h-screen pt-12">
+      <div className="container mx-auto">
+        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
           My Projects
         </h2>
 
         {loading ? (
           <Loader />
         ) : (
-          <Tabs defaultValue={category} className='mb-24 xl:mb-48'>
-            <TabsList className='w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none'>
+          <Tabs defaultValue={category} className="mb-24 xl:mb-48">
+            <TabsList className="w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none">
               {categories?.map((category: any, index: number) => {
                 return (
                   <TabsTrigger
                     key={index}
                     onClick={() => setCategory(category)}
-                    className='capitialize w-[162px] md:w-auto'
+                    className="capitialize w-[162px] md:w-auto"
                     value={category}
                   >
                     {category}
@@ -66,11 +68,11 @@ const Projects = () => {
               })}
             </TabsList>
             {/* tabs content  */}
-            <div className='text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4'>
+            <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
               {filteredProjects.map((project, index) => {
                 return (
                   <TabsContent value={category} key={index}>
-                    <ProjectCard project={project} />
+                    <ProjectCard loading={loading} project={project} />
                   </TabsContent>
                 );
               })}

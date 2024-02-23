@@ -3,6 +3,8 @@ import Footer from '@/components/ui/shared/Footer';
 import Header from '@/components/ui/shared/Header';
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
+import { headers } from 'next/headers';
+import { usePathname, useRouter } from 'next/navigation';
 import './globals.css';
 
 const outfit = Outfit({ subsets: ['latin'] });
@@ -17,13 +19,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = headers();
+  const referer = headersList.get('referer');
+  console.log('🚀 ~ pathname:', referer);
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={outfit.className}>
-        <ThemeProvider attribute='class' defaultTheme='light'>
-          <Header />
+        <ThemeProvider attribute="class" defaultTheme="light">
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

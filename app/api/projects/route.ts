@@ -1,6 +1,6 @@
-import { NextApiResponse } from "next";
-import { NextResponse } from "next/server";
-
+import { PrismaClient } from "@prisma/client";
+import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 const projectData = [
     {
       id: '1',
@@ -83,8 +83,59 @@ const projectData = [
       github: '/',
     },
   ];
-export async function GET(){
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    return NextResponse.json(projectData);
 
+  const prisma = new PrismaClient();
+
+
+export async function GET(request: NextRequest){
+  const projects = await prisma.projects.findMany();
+
+  const greeting = "Hello World!!"
+  const json = {
+      greeting
+  };
+  
+  return NextResponse.json(projects);
 }
+export  async function POST(
+  req: NextRequest,
+  res: NextResponse<any>
+){
+  const data  =await req.json()
+  const {imageLink, category, name , description, github} = data
+  console.log(data)
+  const project = await prisma.projects.create({
+      data: {
+        imageUrl: imageLink,
+        name,
+        description,
+        githubLink:github,
+        category
+      },
+    });
+
+  return NextResponse.json(project)
+  // if (req.method === "POST") {
+  
+  //   // res.status(201).json("SASDASDASDAS");
+
+  //   const { imageUrl, } = req.body;
+
+  //   const profile = await prisma.projects.create({
+  //     data: {
+  //       name: name,
+  //       // @ts-ignore
+  //       email: email,
+  //     },
+  //   });
+
+  //   res.json({ profile });
+  // }
+
+  // res.status(200).json({ name: "John Doe" });
+}
+    // await new Promise(resolve => setTimeout(resolve, 1000));
+    // return NextResponse.json(projectData);
+
+
+
