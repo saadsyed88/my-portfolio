@@ -15,7 +15,6 @@ const Projects = () => {
 
     const response = await fetch(`api/projects`);
     const project = await response.json();
-    console.log('🚀 ~ getProject ~ project:', project);
     setProjects(project);
     setLoading(false);
   };
@@ -72,7 +71,7 @@ const Projects = () => {
               {filteredProjects.map((project, index) => {
                 return (
                   <TabsContent value={category} key={index}>
-                    <ProjectCard loading={loading} project={project} />
+                    <ProjectCard project={project} />
                   </TabsContent>
                 );
               })}
