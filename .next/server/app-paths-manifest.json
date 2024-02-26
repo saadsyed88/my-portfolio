@@ -1,0 +1,16 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/api/projects/route": "app/api/projects/route.js",
+  "/api/projects/[slug]/route": "app/api/projects/[slug]/route.js",
+  "/api/reviews/route": "app/api/reviews/route.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(Admin)/admin/addproject/page": "app/(Admin)/admin/addproject/page.js",
+  "/(Admin)/admin/page": "app/(Admin)/admin/page.js",
+  "/(Admin)/page": "app/(Admin)/page.js",
+  "/(Admin)/admin/editproject/[slug]/page": "app/(Admin)/admin/editproject/[slug]/page.js",
+  "/(Home)/projects/page": "app/(Home)/projects/page.js",
+  "/(Home)/contact/page": "app/(Home)/contact/page.js",
+  "/(Home)/home/page": "app/(Home)/home/page.js"
+}
