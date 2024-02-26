@@ -25,16 +25,9 @@ const EditProject = ({ params }: { params: { slug: string } }) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log('>>>>>', formData);
-    console.log('FORM>>', formData);
+    console.log('🚀 ~ handleSubmit ~ formData:', formData);
+
     try {
-      // const res = await fetch('/projects', {
-      //   method: 'POST',
-      //   body: JSON.stringify(formData),
-      //   headers: {
-      //     'content-type': 'application/json',
-      //   },
-      // });
       const response = await axios.put(
         `/api/projects/${params.slug}`,
         formData,
@@ -44,13 +37,14 @@ const EditProject = ({ params }: { params: { slug: string } }) => {
           },
         }
       );
+      console.log('🚀 ~ handleSubmit ~ response:', response);
 
-      console.log(response.data);
       router.push('/admin');
     } catch (error) {
       console.error(error);
     }
   };
+  console.log('🚀 ~ handleSubmit ~ params.slug:', params.slug);
   return (
     <>
       <form className="flex flex-col w-[80%] mx-auto gap-y-4">

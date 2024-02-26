@@ -19,8 +19,8 @@ export interface IProject {
 interface ProjectCardProps {
   project: IProject;
 }
-const ProjectCard: React.FC<any> = ({ project, loading }) => {
-  useEffect(() => {}, [loading]);
+const ProjectCard: React.FC<any> = ({ project }) => {
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -28,34 +28,28 @@ const ProjectCard: React.FC<any> = ({ project, loading }) => {
         <CardHeader className="p-0">
           {/* image */}
           <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:bg-[110%] xl:dark:bg-work_project_bg_dark xl:bg-no-repeat overflow-hidden ">
-            {project.image && (
-              <Image
-                className="absolute bottom-0 shadow-2xl"
-                src={project.image}
-                width={247}
-                height={250}
-                alt=""
-                priority
-              />
-            )}
+            <Image
+              className="absolute bottom-0 shadow-2xl w-[250px] h-[250px]"
+              src={project?.imageUrl ? `${project?.imageUrl}` : ''}
+              width={247}
+              height={250}
+              alt=""
+              priority
+            />
             {/* buttin links */}
             <div className="flex gap-x-4">
-              {loading && (
-                <Link
-                  className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-900"
-                  href={project?.link}
-                >
-                  <Link2Icon className="text-white" />
-                </Link>
-              )}
-              {project.github && (
-                <Link
-                  className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-900"
-                  href={project.github}
-                >
-                  <Github className="text-white" />
-                </Link>
-              )}
+              <Link
+                className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-900"
+                href={`/projects/${project?.id}`}
+              >
+                <Link2Icon className="text-white" />
+              </Link>
+              <Link
+                className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-900"
+                href={`${project?.github}`}
+              >
+                <Github className="text-white" />
+              </Link>
             </div>
           </div>
         </CardHeader>
@@ -63,7 +57,7 @@ const ProjectCard: React.FC<any> = ({ project, loading }) => {
           <Badge className="uppercase text-sm font-medium mb-2 absolute top-4 left-5">
             {project.category}
           </Badge>
-          <h4 className="h4 mb-1">{project.name}</h4>
+          <h4 className="h4 mb-1">{project?.name}</h4>
           <p className="text-muted-foreground text-lg">{project.description}</p>
           <p></p>
         </div>

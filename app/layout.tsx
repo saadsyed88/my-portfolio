@@ -19,9 +19,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = headers();
-  const referer = headersList.get('referer');
-  console.log('🚀 ~ pathname:', referer);
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={outfit.className}>

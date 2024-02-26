@@ -32,7 +32,7 @@ export  async function PUT(
   req: NextRequest, { params }: { params: { slug: string } }
 ){
   const data  =await req.json()
-  const {imageLink, category, name , description, github} = data
+  const {imageUrl, category, name , description, github} = data
   console.log(data)
   // // Modify the project here
   const updatedProject = await prisma.projects.update({
@@ -40,7 +40,7 @@ export  async function PUT(
       id: Number(params.slug),
     },
     data: {
-      imageUrl: imageLink,
+      imageUrl: imageUrl,
       name,
       description,
       githubLink:github,
