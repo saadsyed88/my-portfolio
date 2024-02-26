@@ -1,1 +1,5 @@
-{"node":{"21305f7536ec61fae6f5622240cc842a6d9c5bae":{"workers":{"app/(Admin)/admin/addproject/page":5979,"app/(Admin)/admin/page":5979,"app/(Admin)/admin/editproject/[slug]/page":5979},"layer":{"app/(Admin)/admin/addproject/page":"rsc","app/(Admin)/admin/page":"rsc","app/(Admin)/admin/editproject/[slug]/page":"rsc"}}},"edge":{},"encryptionKey":"03o8UlOdTcdpEKZ2nuHiRNjGaWbd4InXYYGJezJANvU="}
+{
+  "node": {},
+  "edge": {},
+  "encryptionKey": "UcL5Dexnq9SETnEpGV/yTsdBPBg8nLOyyuPqkDBgS+g="
+}
